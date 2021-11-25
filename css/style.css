@@ -1,0 +1,230 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+.container {
+    max-width: 1310px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+.container__small {
+    max-width: 950px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+body {
+    background-image: url('../images/bg-dark.png');
+    color: #fff;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 500;
+}
+.title {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 36px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+.top {
+    padding: 10px 0 400px;
+    background-image: url('../images/comp.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: #0e0e0e;
+}
+.top__title.topScroll {
+    margin-top: 52px;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    transition: all .8s;
+}
+.header.sticky {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.747);
+    z-index: 1000;
+    width: 1280px;
+    border-radius: 5px;
+    padding: 0 30px;
+}
+.logo {
+    font-size: 24px;
+    margin-top: 10px;
+    padding-left: 20px;color: rgb(255, 187, 42);
+}
+.menu__list {
+    display: flex;
+}
+.menu li {
+    list-style-type: none;
+    padding: 15px 15px;
+}
+.menu__list-link {
+    font-size: 18px;
+    line-height: 22px;
+    transition: all .1s;
+    padding-bottom: 5px;
+    border-bottom: 1px solid transparent;
+}
+.menu__list-link:hover {
+    color: rgb(255, 187, 42);
+    border-bottom: 2px solid rgb(255, 187, 42);
+}
+.top__content {
+    text-align: center;
+    padding-top: 250px;
+}
+.top__title {
+    margin-bottom: 70px;
+    font-size: 38px;
+    font-weight: 700;
+}
+.top__title-2 {
+    font-size: 28px;
+    margin-bottom: 60px;
+}
+.top__link {
+    padding: 20px 30px;
+    background-color: hsla(111, 6%, 25%, 0.329);
+    border-radius: 35px;
+    transition: all .5s;
+}
+.top__link:hover {
+    background: rgb(255, 187, 42);
+}
+
+.about {
+    padding: 50px 80px;
+    
+}
+.about__title, 
+.skills__title {
+    
+}
+.about__text {
+    line-height: 22px;
+    font-weight: 500;
+}
+.about__text p {
+    margin-bottom: 20px;
+}
+.skills {
+    padding: 50px 80px;
+}
+
+.skills__name {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30px;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+.skills__text {
+    margin-bottom: 30px;
+    font-style: italic;
+}
+.skills__list-link {
+    margin-bottom: 10px;
+}
+
+.sites {
+    padding: 50px 0;
+}
+.sites__links {
+    display: flex;
+    text-align: center;
+    width: 400px;
+    margin: 0 auto;
+}
+.sites__list {
+   
+}
+.sites__list-item {
+    list-style: none;
+    text-transform: uppercase;
+    margin: 30px 30px;
+}
+.sites__list-link {
+    transition: all .3s;
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+}
+.sites__list-link:hover {
+    border-color:  rgb(255, 187, 42);
+    
+}
+.contact {
+    padding: 100px 0;
+}
+.contact__inner {
+    display: flex;
+}
+.contactItem {
+    width: 150px;
+    text-align: center;
+    margin: 0 40px;
+    cursor: pointer;
+}
+.contactItem__title {
+    color: rgb(255, 187, 42);
+    margin-bottom: 10px;
+}
+.contactItem__text {
+    font-size: 14px;
+    line-height: 19px;
+}
+.contactItem__logo,
+.contactItem__mail,
+.contactItem__phone,
+.contactItem__telegram {
+    margin-left: 25px;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    background-color: rgb(255, 187, 42);
+    border-radius: 50%;
+    margin-bottom: 2px;
+}
+.contactItem__logo::before,
+.contactItem__phone::before,
+.contactItem__mail::before,
+.contactItem__telegram::before {
+    font-family: 'icomoon';
+	position: absolute;
+    left: 24px;
+    top: 37px;
+    font-size: 52px;
+}
+.contactItem__logo::before {
+    content: "\e947";
+}
+.contactItem__mail::before {
+    content: "\e945";
+}
+.contactItem__phone::before {
+    content: "\e958";
+}
+.contactItem__telegram::before {
+    content: "\ea95";
+}
+
+.footer {
+    padding: 20px 0;
+    text-align: center;
+    background-color: rgb(255, 187, 42);
+    font-weight: 300;
+    font-size: 14px;
+}
+.footer__title {
+    margin-bottom: 2px;
+    font-weight: 300;
+}
+
