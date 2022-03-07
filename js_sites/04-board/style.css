@@ -1,0 +1,80 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: #111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+  }
+
+  .backToPortfolio {
+    padding: 15px 30px;
+    background-color: rgba(255, 188, 42, 0.548);
+    position: fixed;
+    border-radius: 15px;
+    bottom: 30px;
+    right: 40px;
+    color: white;
+    font-size: 26px;
+    transition: all .5s;
+    z-index: 1000;
+  }
+  .backToPortfolio:hover {
+    background-color: rgb(255, 187, 42);
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 400px;
+  }
+  
+  .square {
+    width: 16px;
+    height: 16px;
+    background: #1d1d1d;
+    margin: 2px;
+    box-shadow: 0 0 2px #000;
+    transition: 2s ease;
+  }
+  
+  .square:hover {
+    transition-duration: 0s;
+  }
+
+
+  @media (max-width: 440px) {
+    .square {
+      width: 10px;
+      height: 10px;
+      background: #1d1d1d;
+      margin: 2px;
+      box-shadow: 0 0 2px #000;
+      transition: 2s ease;
+    }
+    .container {
+      max-width: inherit;
+      padding: 0 5px;
+     }
+  } 
+
+  @media (max-width: 414px) {
+    .square {
+      width: 9.9px;
+      height: 9.9px;
+    }
+  } 
+
+  @media (max-width: 390px) {
+    .square {
+      width: 11px;
+      height: 11px;
+    }
+  } 

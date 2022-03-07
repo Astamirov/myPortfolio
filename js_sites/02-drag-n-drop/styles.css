@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #e5e5e5;
+  display: flex;
+  padding-top: 5rem;
+  justify-content: center;
+  overflow: hidden;
+  margin: 0;
+}
+
+.backToPortfolio {
+  padding: 15px 30px;
+  background-color: rgba(255, 188, 42, 0.548);
+  position: fixed;
+  border-radius: 15px;
+  bottom: 30px;
+  right: 30px;
+  color: white;
+  font-size: 26px;
+  transition: all .5s;
+  z-index: 1000;
+}
+.backToPortfolio:hover {
+  background-color: rgb(255, 187, 42);
+}
+
+.row {
+  display: flex;
+  width: 600px;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.col-header {
+  width: 150px;
+  box-shadow: 4px 4px 9px rgba(198, 198, 198, 0.36);
+  border-radius: 20px;
+  padding: 0.8rem 1rem;
+  color: #fff;
+}
+
+.item {
+  width: 150px;
+  height: 66px;
+  border: 1px solid #eee;
+  box-shadow: 4px 4px 9px rgba(198, 198, 198, 0.36);
+  border-radius: 20px;
+  background: #f7f6f7;
+  padding: 0.8rem 1rem;
+  color: #828282;
+  text-align: center;
+  cursor: grab;
+  
+}
+
+.item:active {
+  cursor: grabbing;
+}
+
+.placeholder {
+  width: 150px;
+  height: 66px;
+}
+
+.start {
+  background: linear-gradient(90deg, #ff85e4 0%, #229efd 179.25%);
+}
+
+.progress {
+  background: linear-gradient(90deg, #209cff 0%, #68e0cf 100%);
+}
+
+.done {
+  background: linear-gradient(90deg, #84fab0 0%, #8fd3f4 100%);
+}
+
+.hold {
+  border: 1px solid #8ed7ed;
+  transform: matrix3d();
+}
+
+.hide {
+  display: none;
+}
+
+.hovered {
+  border-top: 2px solid #cde4eb;
+}
+
+
+@media (max-width: 760px) {
+  .row {
+    width: 520px;
+  }
+}
+
+@media (max-width: 570px) {
+  .row {
+    width: 460px;
+  }
+  .col-header {
+    width: 130px;
+  }
+  .item {
+    width: 130px;
+  }
+  .placeholder {
+    width: 130px;
+  }
+}
+
+@media (max-width: 500px) {
+  .row {
+    width: 350px;
+  }
+  .col-header {
+    width: 105px;
+  }
+  .item {
+    width: 105px;
+  }
+  .column {
+    font-size: 13px;
+  }
+  .placeholder {
+    width: 105px;
+  }
+}
