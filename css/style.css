@@ -38,14 +38,26 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     box-shadow: #0e0e0e;
+    text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4), 0px 8px 13px rgba(0, 0, 0, 0.1), 0px 18px 23px rgba(0, 0, 0, 0.1);
 }
 .top__title.topScroll {
     margin-top: 52px;
 }
-.header {
+header {
+    padding: 2px 10px;
+    background: #121212;
+    box-shadow: 0 0 15px rgba(0,0,0,15), 0 0 7px rgba(0,0,0,0.22);
+    height: 60px;
+    position: sticky;
+    top: 0;
     display: flex;
     justify-content: space-between;
     transition: all .8s;
+    z-index: 999;
+}
+
+.highlight {
+    color: rgb(255, 187, 42);
 }
 
 /* btn */
@@ -84,6 +96,8 @@ body {
     transform: translateY(16px);
 }
 /* btn-animation */
+
+
 .menu-btn.open .menu-btn-burger {
     transform: translateX(-50px);
     background: transparent;
@@ -96,7 +110,7 @@ body {
 }
 
 
- .header.sticky {
+ header.sticky {
     position: fixed;
     background: rgba(0, 0, 0, 0.747);
     z-index: 1000;
@@ -105,9 +119,7 @@ body {
     border-radius: 5px;
 } 
 .logo {
-    font-size: 24px;
-    margin-top: 10px;
-    padding-left: 20px;color: rgb(255, 187, 42);
+    font-size: 22px;
 }
 .menu__list {
     display: flex;
@@ -115,6 +127,10 @@ body {
 .menu li {
     list-style-type: none;
     padding: 15px 15px;
+    transition: all 0.3s;
+}
+.menu li:hover {
+    transform: rotate(-3deg);
 }
 .menu__list-link {
     font-size: 18px;
@@ -124,7 +140,6 @@ body {
     border-bottom: 1px solid transparent;
 }
 .menu__list-link:hover {
-    color: rgb(255, 187, 42);
     border-bottom: 2px solid rgb(255, 187, 42);
 }
 .top {
@@ -158,10 +173,7 @@ body {
     padding: 50px 80px;
     
 }
-.about__title, 
-.skills__title {
-    
-}
+
 .about__text {
     line-height: 22px;
     font-weight: 500;
@@ -198,15 +210,19 @@ body {
     margin: 0 auto;
 }
 
-.sites__title {
+
+.sites__title,
+.skills__title,
+.about__title,
+.contact__title {
     margin-top: 70px;
 }
-.sites__list {
-}
+
 .sites__list-item {
     list-style: none;
     text-transform: uppercase;
     margin: 20px 10px;
+    text-align: center;
 }
 .sites__list-link {
     transition: all .3s;
@@ -217,6 +233,102 @@ body {
     border-color:  rgb(255, 187, 42);
     
 }
+
+/* button animation*/
+.button {
+    position: relative;
+    display: block;
+    padding: 10px 10px;
+    margin: 5px 0px 5px 5px;
+    color: rgb(255, 187, 42);
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.5s;
+    letter-spacing: 4px;
+    overflow: hidden;
+}
+
+.button:hover {
+    background: rgb(255, 187, 42);
+    color: #050801;
+    box-shadow: 0 0 5px rgb(255, 187, 42), 0 0 25px rgb(255, 187, 42), 0 0 50px rgb(255, 187, 42), 0 0 200px rgb(255, 187, 42);
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+}
+
+.button span {
+    position: absolute;
+    display: block;
+}
+.button span:nth-child(1) {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgb(255, 187, 42));
+    animation: animate1 2s linear infinite;
+}
+.button span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, rgb(255, 187, 42));
+    animation: animate2 2s linear infinite;
+    animation-delay: 0.50s;
+}
+.button span:nth-child(3) {
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, rgb(255, 187, 42));
+    animation: animate3 2s linear infinite;
+    animation-delay: 1s;
+}
+.button span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, rgb(255, 187, 42));
+    animation: animate4 2s linear infinite;
+    animation-delay: 1.50s;
+}
+
+@keyframes animate1 {
+    0%{
+        left: -100%;
+    }
+    50%, 100%{
+        left: 100%;
+    }
+}
+@keyframes animate2 {
+    0%{
+        top: -100%;
+    }
+    50%, 100%{
+        top: 100%;
+    }
+}
+@keyframes animate3 {
+    0%{
+        right: -100%;
+    }
+    50%, 100%{
+        right: 100%;
+    }
+}
+@keyframes animate4 {
+    0%{
+        bottom: -100%;
+    }
+    50%, 100%{
+        bottom: 100%;
+    }
+}
+
+
 .contact {
     padding: 100px 0;
 }
@@ -293,12 +405,12 @@ body {
 }
 
 @media (max-width: 830px) {
-    .header.sticky {
+    header.sticky {
         max-width: 830px;
         width: 96%;
     }
     .top__content {
-        padding-top: 75px;
+        padding-top: 150px;
     }
     .top__title {
         margin-bottom: 35px;
@@ -321,13 +433,13 @@ body {
 }
 
 @media (max-width: 750px) {
-    .header.sticky {
+    header.sticky {
         width: 95%;
     }
     .logo {
         display: none;
     }
-    .header {
+    header {
         justify-content: center;
     }
     .skills__name {
@@ -340,7 +452,7 @@ body {
         list-style-type: none;
     }
     .sites__title {
-        margin-top: 10px;
+        margin-bottom: 30px;
     }
     .sites__list-item {
         margin: 20px 10px;
@@ -352,9 +464,8 @@ body {
         display: flex;
         
     }
-    .header {
+    header {
         justify-content: right;
-        position: relative;
         justify-content: space-between;
     }
     .menu {
@@ -363,7 +474,7 @@ body {
         transition: all 0.5s ease-in-out;
         background-color: #222121d5;
         border-radius: 5px;
-        width: 100%;
+        width: 96%;
         display: flex;
         justify-content: center;
         text-align: center;
@@ -381,7 +492,7 @@ body {
         height: 100vh;
     }
     .top__content {
-        padding-top: 145px;
+        padding-top: 135px;
     }
     .menu__list {
         display: block;
@@ -414,9 +525,15 @@ body {
 }
 
 @media (max-width: 440px) {
+    .menu {
+        width: 95%;
+    }
+    .top__content {
+        padding-top: 90px;
+    }
     .top__title {
         font-size: 26px;
-        margin-top: 100px;
+        margin-top: 0;
         margin-bottom: 100px;
     }
     .top__title-2 {
@@ -429,10 +546,18 @@ body {
     .title {
         font-size: 26px;
     }
-    
+}
+
+@media (max-width: 330px) {
+    .menu {
+        width: 94%;
+    }
 }
 
 @media (max-width: 290px) {
+    .menu {
+        width: 93%;
+    }
     .title {
         font-size: 20px;
     }

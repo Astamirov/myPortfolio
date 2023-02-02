@@ -23,6 +23,7 @@
     font-size: 26px;
     transition: all .5s;
     z-index: 1000;
+    cursor: pointer;
   }
   .backToPortfolio:hover {
     background-color: rgb(255, 187, 42);

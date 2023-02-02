@@ -7,34 +7,38 @@ const slidesCount = mainSlide.querySelectorAll('div').length;
 
 let activeSlideIndex = 0;
 
-sidebar.style.top = `-${(slidesCount - 1)*100}vh`;
+sidebar.style.top = `-${(slidesCount - 1) * 100}vh`;
 
 upBtn.addEventListener('click', () => {
-  changeSlide('up')
+  changeSlide('up');
 });
 
 downBtn.addEventListener('click', () => {
-  changeSlide('down')
+  changeSlide('down');
 });
 
 function changeSlide(direction) {
   if (direction === 'up') {
-    activeSlideIndex++
+    activeSlideIndex++;
     if (activeSlideIndex === slidesCount) {
-      activeSlideIndex = 0
+      activeSlideIndex = 0;
     }
   } else if (direction === 'down') {
-    activeSlideIndex--
+    activeSlideIndex--;
     if (activeSlideIndex < 0) {
-      activeSlideIndex = slidesCount - 1
+      activeSlideIndex = slidesCount - 1;
     }
   }
 
-
   const height = container.clientHeight;
 
-mainSlide.style.transform = `translateY(-${activeSlideIndex * height}px)`;
-sidebar.style.transform = `translateY(${activeSlideIndex * height}px)`;
+  mainSlide.style.transform = `translateY(-${activeSlideIndex * height}px)`;
+  sidebar.style.transform = `translateY(${activeSlideIndex * height}px)`;
 }
 
+//back
+const backToPortfolio = document.getElementById('back');
 
+backToPortfolio.onclick = function () {
+  history.back(); // Возвращаемся на предыдущую страницу, ее также можно записать как history.go (-1)
+};
