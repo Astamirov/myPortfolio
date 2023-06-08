@@ -60,7 +60,59 @@ header {
     color: rgb(255, 187, 42);
 }
 
+/* lang */
+
+.language {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+}
+.language::after {
+    z-index: -1;
+    content: '';
+    width: 0;
+    height: 0;
+    border: 5px solid transparent;
+        border-top-color: transparent;
+        border-top-style: solid;
+        border-top-width: 5px;
+        border-bottom-color: transparent;
+        border-bottom-style: solid;
+        border-bottom-width: 5px;
+    border-bottom: none;
+    border-top: 5px solid #FFF;
+    position: absolute;
+    right: 5px;
+    top: 12px;
+    transform: translateY(-50%);
+}
+.language .head {
+    padding: 5px 25px 5px 5px;
+    color: #FFF;
+    background: inherit;
+}
+.language .menu__lang {
+    list-style-type: none;
+    padding: 5px 0;
+    margin: 0;
+    display: none;
+    position: absolute;
+    left: 0;
+    background: #121212;
+    border-radius: 30px;
+
+}
+.language ul li a {
+    display: block;
+    color: #FFF;
+    padding: 0px 5px;
+}
+
 /* btn */
+.menu {
+    display: flex;
+}
+
 .menu-btn {
     position: relative;
     display: none;
@@ -171,7 +223,6 @@ header {
 
 .about {
     padding: 50px 80px;
-    
 }
 
 .about__text {
@@ -400,9 +451,7 @@ header {
 }
 
 
-@media (max-width: 970px) {
-
-}
+/* Адаптивка */
 
 @media (max-width: 830px) {
     header.sticky {
@@ -432,7 +481,7 @@ header {
     }
 }
 
-@media (max-width: 750px) {
+@media (max-width: 807px) {
     header.sticky {
         width: 95%;
     }
@@ -459,7 +508,7 @@ header {
     }
 }
 
-@media (max-width: 548px) {
+@media (max-width: 608px) {
     .logo {
         display: flex;
         
@@ -470,7 +519,7 @@ header {
     }
     .menu {
         position: absolute;
-        top: -300px;
+        top: -320px;
         transition: all 0.5s ease-in-out;
         background-color: #222121d5;
         border-radius: 5px;
@@ -478,6 +527,14 @@ header {
         display: flex;
         justify-content: center;
         text-align: center;
+    }
+    .menu__list.lang{
+        position: relative;
+    }
+    .menu__list-lang {
+        position: absolute;
+        top: 0;
+        right: 0;
     }
     .menu.menu-min {
         position: absolute;

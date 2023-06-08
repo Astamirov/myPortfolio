@@ -2,6 +2,7 @@ const anchors = document.querySelectorAll('a[href*="#"]');
 const menuBtn = document.querySelector('.menu-btn');
 const menu = document.querySelector('.menu');
 const menuList = document.querySelector('.menu__list');
+const menuListItem = document.querySelectorAll('.menu__list-item')
 
 for (let anchor of anchors) {
   anchor.addEventListener('click', function (event) {
@@ -24,13 +25,15 @@ menuBtn.addEventListener('click', () => {
     menuBtn.classList.remove('open');
     menuOpen = false;
     menu.classList.remove('menu-min');
+    langHeadUl.style = 'display: none';  
+    langOpen = false;
   }
 });
 
 menuList.addEventListener('click', () => {
-  menuBtn.classList.remove('open');
-  menuOpen = false;
-  menu.classList.remove('menu-min');
+  // menuBtn.classList.remove('open');
+  // menuOpen = false;
+  // menu.classList.remove('menu-min');
 });
 
 // Show active menu when scrolling
@@ -77,3 +80,19 @@ const highlightMenu = () => {
 
 window.addEventListener('scroll', highlightMenu);
 window.addEventListener('click', highlightMenu);
+
+
+// lang
+const langHead = document.querySelector('.head');
+const langHeadUl = document.querySelector('.language ul');
+
+let langOpen = false;
+langHead.addEventListener('click', () => {
+  if (!langOpen) {
+    langHeadUl.style = 'display: block';
+    langOpen = true;
+  } else {
+    langHeadUl.style = 'display: none';
+    langOpen = false;
+  }
+});
